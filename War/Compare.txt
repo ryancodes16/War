@@ -1,0 +1,28 @@
+    public boolean compare(int num2)
+    {
+        boolean check = false;
+        boolean war = false;
+        if(this.num > num2)
+        {
+            check = true;
+        }
+        else if(this.num < num2)
+        {
+            check = false;
+        }
+        else if(this.num == num2)
+        {
+            System.out.println("War");
+            war = true;
+        }
+        if(war == true)
+        {
+            System.out.println("WAR!");
+            return(war);
+        }
+        else
+        {
+            return(check);
+        }
+        
+    }

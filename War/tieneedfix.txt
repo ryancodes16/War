@@ -1,0 +1,129 @@
+        if(myDeck.getP1size() >= 3 && myDeck.getP2size() >= 3)
+        {
+        DrawnP1[1] = myDeck.draw1(1).getNum();
+        DrawnP1[2] = myDeck.draw1(2).getNum();
+        DrawnP2[1] = myDeck.draw2(1).getNum();
+        DrawnP2[2] = myDeck.draw2(2).getNum();
+        if(DrawnP2[2] > DrawnP1[2])
+        {
+            myDeck.Play2Wins(0);
+            myDeck.Play2Wins(1);
+            myDeck.Play2Wins(2);
+            myDeck.Play1Loses(0);
+            myDeck.Play1Loses(1);
+            myDeck.Play1Loses(2);
+        }
+        else if(DrawnP2[2] < DrawnP1[2])
+        {
+            myDeck.Play1Wins(0);
+            myDeck.Play1Wins(1);
+            myDeck.Play1Wins(2);
+            myDeck.Play2Loses(0);
+            myDeck.Play2Loses(1);
+            myDeck.Play2Loses(2);
+        }
+        else if(DrawnP2[2] == DrawnP2[2])
+        {
+            if(myDeck.getP1size() >= 5 && myDeck.getP2size() >= 5)
+            {
+                 DrawnP1[3] = myDeck.draw1(3).getNum();
+                 DrawnP1[4] = myDeck.draw1(4).getNum();
+                 DrawnP1[5] = myDeck.draw1(5).getNum();
+                 DrawnP2[3] = myDeck.draw2(3).getNum();
+                 DrawnP2[4] = myDeck.draw2(4).getNum();
+                 DrawnP2[5] = myDeck.draw2(5).getNum();
+                 if(DrawnP1[5] > DrawnP2[5])
+                 {
+                    myDeck.Play1Wins(0);
+                    myDeck.Play1Wins(1);
+                    myDeck.Play1Wins(2);
+                    myDeck.Play1Wins(3);
+                    myDeck.Play1Wins(4);
+                    myDeck.Play1Wins(5);
+                    myDeck.Play2Loses(0);
+                    myDeck.Play2Loses(1);
+                    myDeck.Play2Loses(2);
+                    myDeck.Play2Loses(3);
+                    myDeck.Play2Loses(4);
+                    myDeck.Play2Loses(5);
+                    }
+                 else if(DrawnP2[5] > DrawnP1[5])
+                 {
+                    myDeck.Play2Wins(0);
+                    myDeck.Play2Wins(1);
+                    myDeck.Play2Wins(2);
+                    myDeck.Play2Wins(3);
+                    myDeck.Play2Wins(4);
+                    myDeck.Play2Wins(5);
+                    myDeck.Play1Loses(0);
+                    myDeck.Play1Loses(1);
+                    myDeck.Play1Loses(2);
+                    myDeck.Play1Loses(3);
+                    myDeck.Play1Loses(4);
+                    myDeck.Play1Loses(5);
+                 }
+                 else if(DrawnP1[5] == DrawnP1[5])
+                 {
+                     int winner = (int)(Math.random() * 2) + 1;
+                     if(winner == 1)
+                     {
+                        myDeck.Play1Wins(0);
+                        myDeck.Play1Wins(1);
+                        myDeck.Play1Wins(2);
+                        myDeck.Play1Wins(3);
+                        myDeck.Play1Wins(4);
+                        myDeck.Play1Wins(5);
+                        myDeck.Play2Loses(0);
+                        myDeck.Play2Loses(1);
+                        myDeck.Play2Loses(2);
+                        myDeck.Play2Loses(3);
+                        myDeck.Play2Loses(4);
+                        myDeck.Play2Loses(5);
+                        }
+                     else if(winner == 2)
+                     {
+                        myDeck.Play2Wins(0);
+                        myDeck.Play2Wins(1);
+                        myDeck.Play2Wins(2);
+                        myDeck.Play2Wins(3);
+                        myDeck.Play2Wins(4);
+                        myDeck.Play2Wins(5);
+                        myDeck.Play1Loses(0);
+                        myDeck.Play1Loses(1);
+                        myDeck.Play1Loses(2);
+                        myDeck.Play1Loses(3);
+                        myDeck.Play1Loses(4);
+                        myDeck.Play1Loses(5);
+                        }
+                    }
+            }
+            else if(myDeck.getP1size() >= 5 && myDeck.getP2size() < 5)
+            {
+                myDeck.Play1Wins(0);
+                myDeck.Play1Wins(1);
+                myDeck.Play1Wins(2);
+                myDeck.Play2Loses(0);
+                myDeck.Play2Loses(1);
+                myDeck.Play2Loses(2);
+            }
+            else if(myDeck.getP2size() >= 5 && myDeck.getP1size() < 5)
+            {
+                myDeck.Play2Wins(0);
+                myDeck.Play2Wins(1);
+                myDeck.Play2Wins(2);
+                myDeck.Play1Loses(0);
+                myDeck.Play1Loses(1);
+                myDeck.Play1Loses(2);
+            }
+        }
+    }
+    else if(myDeck.getP2size() >= 1 && myDeck.getP1size() == 1)
+    {
+        myDeck.Play2Wins(0);
+        myDeck.Play1Loses(0);
+    }
+     else if(myDeck.getP1size() >= 1 && myDeck.getP2size() == 1)
+    {
+        myDeck.Play1Wins(0);
+        myDeck.Play2Loses(0);
+    }
